@@ -1,0 +1,16 @@
+{% autoescape off %}
+
+Hello {{ user.username }},
+
+We received a request to reset the password for your account associated with this Email Address.
+To initiate the password reset process for your account, click the link below.
+
+{{ protocol }}://{{ domain }}{% url 'accounts:password-reset-confirm' uidb64=uid token=token %}
+
+This link can only be use once. If you need to reset your password again, please visit
+{{ protocol }}://{{ domain }} and request another reset.
+
+Sincerely,
+The {{ site_name }} Team.
+
+{% endautoescape %}

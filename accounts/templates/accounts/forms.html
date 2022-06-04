@@ -1,0 +1,14 @@
+{% load crispy_forms_tags %}
+{% for field in form %}
+<div class="form-outline mb-4">
+    <!-- No need for error handling. It has already been taken up by
+    another function.
+    <div class="text-danger small">
+        <span class="text-danger">{{ field.errors }}</span>
+    </div>
+    -->
+    <div class="col-10">
+        <p>{{ field | as_crispy_field }}</p>
+    </div>
+</div>
+{% endfor %}
